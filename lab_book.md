@@ -19,6 +19,8 @@ Despite being a useful resource for initial biological prospection, our first ve
 |[Warren et al.](https://onlinelibrary.wiley.com/doi/full/10.1111/tpj.12886)|---|**scaffold NG50**: 41.9 kbp; **scaffold N50**: 20.4 kbp|"we re‐scaffolded the previously published V2 PG29 draft genome sequence using a reference PG29 RNA‐seq transcriptome assembly, a set of 27 720 white spruce cDNA clone sequences (Rigault et al., 2011), and large‐fragment (3, 8, 12 kbp) mate pair sequences"|**scaffold NG50**: 71.5 kbp; **scaffold N50**: 34.4 kb|---|  
 
 #### 02-13-2019  
+#### Chicago library  
+After reading all those papers, a method that seemed particularly promising for significantly improving the contiguity of genomes was the Chicago library. This method allow for long-range scaffolding, complementing the middle-range scaffolding promoted by mate-pair reads. There are other papers showing the potential of this technique for improving the assembly, like [this](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5784092/) one, that uses Illumina paired-end, mate-pair and Chicago library for assemblying a 700 Mbp genome with 8 Mbp N50 and 30,501 scaffolds. 
 #### Alternative to getting new sequencing information  
 Instead of generating new sequencing data to improve our reference genome, we can run the same hybrid strategy as Marcela did with some modifications. The following could be tried:  
 * to give as additional data the sequencing reads obtained for the male/female project. Not only the paired-end reads sequenced for the male/female genome project, but also the transcripts assembled for the male/female transcriptome project. Re-run Marcela's pipeline with this additional data.  
