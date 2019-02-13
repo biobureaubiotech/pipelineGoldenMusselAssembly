@@ -1,4 +1,4 @@
-#### 02-11-2019  
+#### 02-11-2019 until 02-13-2019  
 Despite being a useful resource for initial biological prospection, our first version of the Limnoperna fortunei genome (v1, assembled by Marcela) is still highly fragmented, what doesn't make it a good template for future assemblies. Then, we've decided to invest effort into making an improved assembly- a genome v2.0. In order to chosse the best strategy for making such improvement, we've read the most recent papers that had the same goal:  
 
 |Paper|Original Genome Strategy|Original Genome Metrics|Strategy for Improving Original Genome|Improved Genome Metrics|Highlights|
