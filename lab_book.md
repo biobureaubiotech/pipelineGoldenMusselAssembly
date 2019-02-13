@@ -21,6 +21,6 @@ Despite being a useful resource for initial biological prospection, our first ve
 #### 02-13-2019  
 #### Alternative to getting new sequencing information  
 Instead of generating new sequencing data to improve our reference genome, we can run the same hybrid strategy as Marcela did with some modifications. The following could be tried:  
-* give as additional data the sequencing reads obtained for the male/female projec. Then re-run the pipeline run by Marcela   
-* use a softwares focused on the assembly of highly heterozygous genomes to replace the Sparse Assembler in the pipeline run by Marcela  
+* to give as additional data the sequencing reads obtained for the male/female project. Not only the paired-end reads sequenced for the male/female genome project, but also the transcripts assembled for the male/female transcriptome project. Re-run Marcela's pipeline with this additional data.  
+* to use a software focused on the assembly of highly heterozygous genomes to replace Sparse Assembler and re-run Marcela's pipeline. A promising software is [PLATANUS](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4120091/), as shown by [this](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5773036/) recent paper.    
 
