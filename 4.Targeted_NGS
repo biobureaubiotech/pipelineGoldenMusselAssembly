@@ -1,0 +1,27 @@
+#### 2018-11-06  
+Today I started building the workflow for the Targeted NGS analysis at Galaxy. It was named "Targeted NGS" and already has trimming, quality control, mapping and duplicates removal steps. The worflow is being built based on [this](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6043663/) paper.  
+
+##### To do  
+* Find a tool for removing low quality mapped reads to include right after deuplicates removal (maybe Galaxy still doesn't have a tool to do that, as according to [this](https://biostar.usegalaxy.org/p/3436/) thread)  
+
+#### 2018-12-07
+##### Getting a simulated Targeted-NGS dataset
+In order to test the Targeted NGS workflow, we have built a simulated sequencing dataset using the program [ART](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278762/). Before running the simulation, we have built a [FASTA file](pipelineGoldenMusselAssembly/files/LF.26-target-genes.fasta) containing only the sequences of the target genes. To create the file, we have used the [samtools faidx](http://www.htslib.org/doc/samtools.html) function. This file was used as input for the building of the simulated sequencing reads. The simulation was finally executed with the following parameters: 150 bp long reads, 150x coverage depth, paired-end reads:  
+
+```console 
+rpgisi21@instance:~$ art_illumina -ss MSv3 -i LF.26-target-genes.fasta -p -l 250 -f 150 -m 350 -s 15 -o targeted-NGS-sequencing-simulation
+```  
+
+The files obtained from ART simulation were stored at our Galaxy instance under the Targeted-NGS history, as well as in the GCloud bucket gs://plataforma-bioinfo/testes/workflows.     
+
+#### 2019-01-24
+##### Getting a real Targeted-NGS dataset  
+After talking with Juliana, we concluded that it would be a better option to use targeted-NGS dataset that has already been analysed and published, so that our Galaxy workflow can have a work to compare with. After a difficult search (most targeted-ngs papers didn't make their raw data available at [SRA](https://www.ncbi.nlm.nih.gov/sra), I found the following work:  
+
+[Targeted Next-Generation Sequencing for Clinical Diagnosis of 561 Mendelian Diseases
+](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4537117/)  
+whose raw data is available at [this](https://www.ncbi.nlm.nih.gov/sra/SRX1090854[accn]) SRA address  
+
+The fastq files from the project were downloaded using the customized script *download-from-SRA*, and were placed at the folder */home/rafaelcuadrat/galaxy/tools/myTools* (instance: *galaxy-server-test-ngs-workflow*	), while I still cannot figure out a way of rewriting the *download-from-SRA* to save it directly to the History. 
+
+   
